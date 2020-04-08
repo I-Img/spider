@@ -83,8 +83,8 @@ func (t *Tumblr) CrawlLatestContents() (pics []common.Content, err error) {
 				CType:     common.PIC,
 				CrawlTime: time.Now(),
 				Content:   p.Url,
-				Width:     float32(p.Width),
-				Height:    float32(p.Height),
+				Width:     p.Width,
+				Height:    p.Height,
 			})
 		}
 	}

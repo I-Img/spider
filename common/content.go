@@ -11,6 +11,7 @@ const (
 
 //Content 抓取的内容
 type Content struct {
+	ID int `json:"id"`
 	//Name 内容ID或者名称
 	Name string `json:"name"`
 	//Auth 内容作者或者内容主人公
@@ -22,9 +23,9 @@ type Content struct {
 	//CType Content类型值
 	CType ContentType `json:"c_type"`
 	//Width 如果是图片，则表示图片宽
-	Width float32 `json:"width"`
+	Width int `json:"width"`
 	//Height 如果是图片，则表示图片高
-	Height float32 `json:"height"`
+	Height int `json:"height"`
 	//Remarks 备注信息
 	Remarks string `json:"remarks"`
 }

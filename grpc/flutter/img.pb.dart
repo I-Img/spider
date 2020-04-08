@@ -112,8 +112,8 @@ class FetchPicturesResponse extends $pb.GeneratedMessage {
 class PictureInfo extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo('PictureInfo', createEmptyInstance: create)
     ..aOS(1, 'url')
-    ..aOS(2, 'axisX', protoName: 'axis_X')
-    ..aOS(3, 'axisY', protoName: 'axis_Y')
+    ..a<$core.int>(2, 'axisX', $pb.PbFieldType.O3, protoName: 'axis_X')
+    ..a<$core.int>(3, 'axisY', $pb.PbFieldType.O3, protoName: 'axis_Y')
     ..hasRequiredFields = false
   ;
 
@@ -142,18 +142,18 @@ class PictureInfo extends $pb.GeneratedMessage {
   void clearUrl() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get axisX => $_getSZ(1);
+  $core.int get axisX => $_getIZ(1);
   @$pb.TagNumber(2)
-  set axisX($core.String v) { $_setString(1, v); }
+  set axisX($core.int v) { $_setSignedInt32(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasAxisX() => $_has(1);
   @$pb.TagNumber(2)
   void clearAxisX() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get axisY => $_getSZ(2);
+  $core.int get axisY => $_getIZ(2);
   @$pb.TagNumber(3)
-  set axisY($core.String v) { $_setString(2, v); }
+  set axisY($core.int v) { $_setSignedInt32(2, v); }
   @$pb.TagNumber(3)
   $core.bool hasAxisY() => $_has(2);
   @$pb.TagNumber(3)

@@ -11,6 +11,8 @@ import (
 	_ "github.com/lib/pq"
 )
 
+var _d *Driver
+
 type Driver struct {
 	cli *sql.DB
 	pos int
@@ -23,7 +25,19 @@ type Config struct {
 	Passwd string `toml:"passwd"`
 }
 
+func GetDriver() *Driver {
+	if _d == nil {
+		panic("DB Driver Is nil")
+	}
+
+	return _d
+}
+
 func NewDriver() (*Driver, error) {
+	if _d == nil {
+		_d = new(Driver)
+	}
+
 	c := Config{}
 
 	_, err := toml.DecodeFile(os.Getenv("POSTGRES_CONFIG"), &c)
@@ -47,6 +61,8 @@ func NewDriver() (*Driver, error) {
 
 	d.pos += 1
 
+	_d.cli = d.cli
+	_d.pos = d.pos
 	return d, nil
 }
 

@@ -42,8 +42,8 @@ const PictureInfo$json = const {
   '1': 'PictureInfo',
   '2': const [
     const {'1': 'url', '3': 1, '4': 1, '5': 9, '10': 'url'},
-    const {'1': 'axis_X', '3': 2, '4': 1, '5': 9, '10': 'axisX'},
-    const {'1': 'axis_Y', '3': 3, '4': 1, '5': 9, '10': 'axisY'},
+    const {'1': 'axis_X', '3': 2, '4': 1, '5': 5, '10': 'axisX'},
+    const {'1': 'axis_Y', '3': 3, '4': 1, '5': 5, '10': 'axisY'},
   ],
 };
 
