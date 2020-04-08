@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "rpc.v1";
+
+enum StatusCode {
+    SUCC = 0;
+    FAILE = 1;
+}
+
+enum PictureType {
+    ANIMAL = 0;
+}
+
+message FetchPicturesRequest {
+    string UUID = 1;
+    int32 Pos = 2;
+    PictureType Ptype = 3;
+}
+
+message FetchPicturesResponse {
+    StatusCode status = 1;
+    string msg = 2;
+    repeated PictureInfo info = 3;
+}
+
+message PictureInfo{
+    string url = 1;
+    string axis_X =2;
+    string axis_Y = 3;
+}
+
+service PictureService {
+    rpc FetchPicture (FetchPicturesRequest) returns (FetchPicturesResponse) {
+    }
+}
