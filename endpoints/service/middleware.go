@@ -23,6 +23,7 @@ type loggingMiddleware struct {
 }
 
 func (l loggingMiddleware) Fetch(context context.Context, request Request) (response Response, err error) {
+	l.logger.Log("method", "Fetch", "UUID", request.UUID, "Pos", request.Pos, "err", err)
 	defer func() {
 		l.logger.Log("method", "Fetch", "UUID", request.UUID, "Pos", request.Pos, "err", err)
 	}()
