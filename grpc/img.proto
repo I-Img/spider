@@ -25,8 +25,8 @@ message FetchPicturesResponse {
 
 message PictureInfo{
     string url = 1;
-    string axis_X =2;
-    string axis_Y = 3;
+    int32 axis_X =2;
+    int32 axis_Y = 3;
 }
 
 service PictureService {

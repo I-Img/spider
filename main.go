@@ -18,34 +18,27 @@ func main() {
 		panic(err)
 	}
 
-	spiders := initSpider()
-	logrus.Debugf("Has [%d] spiders", len(spiders))
-	for _, s := range spiders {
-		preys, err := s.CrawlLatestContents()
-		if err != nil {
-			logrus.Errorf("%s", err.Error())
-			continue
-		}
-
-		s.SaveContentHook(preys)
-
-		logrus.Debugf("Has [%d] Preys", len(preys))
-		if err := d.SaveContents(preys); err != nil {
-			logrus.Errorf("Save Preys Error: %s", err.Error())
-		}
-	}
+	startGRPC(":80")
+	//spiders := initSpider()
+	//logrus.Debugf("Has [%d] spiders", len(spiders))
+	//for _, s := range spiders {
+	//	preys, err := s.CrawlLatestContents()
+	//	if err != nil {
+	//		logrus.Errorf("%s", err.Error())
+	//		continue
+	//	}
+	//
+	//	s.SaveContentHook(preys)
+	//
+	//	logrus.Debugf("Has [%d] Preys", len(preys))
+	//	if err := d.SaveContents(preys); err != nil {
+	//		logrus.Errorf("Save Preys Error: %s", err.Error())
+	//	}
+	//}
 
 }
 
 func initSpider() []engine.EngineInterface {
-	//if os.Getenv(common.TUMBLRKEY) == "" {
-	//	logrus.Panicf(common.TUMBLRKEY)
-	//}
-	//
-	//if os.Getenv(common.TUMBLRSECERT) == "" {
-	//	logrus.Panicf(common.TUMBLRSECERT)
-	//}
-	//tumblr = tumblr2.NewTumber(os.Getenv(common.TUMBLRKEY), os.Getenv(common.TUMBLRSECERT))
 
 	var eei []engine.EngineInterface
 

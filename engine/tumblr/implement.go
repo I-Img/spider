@@ -80,11 +80,11 @@ func (t *Tumblr) CrawlLatestContents() (pics []common.Content, err error) {
 			pics = append(pics, common.Content{
 				Name:      p.Content,
 				Auth:      b.Alias,
-				CType:     common.PIC,
+				CType:     common.TUMBLR,
 				CrawlTime: time.Now(),
 				Content:   p.Url,
-				Width:     float32(p.Width),
-				Height:    float32(p.Height),
+				Width:     p.Width,
+				Height:    p.Height,
 			})
 		}
 	}

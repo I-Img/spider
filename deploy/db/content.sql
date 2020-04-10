@@ -7,7 +7,7 @@ CREATE TABLE "public"."content" (
   "c_type" int8 NOT NULL,
   "width" float8,
   "height" float8,
-  "remarks" varchar(255),
+  "remarks" varchar(2048),
 
   PRIMARY KEY ("id")
 )
